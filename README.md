@@ -1,76 +1,108 @@
-# Welcome to GitHub
-
-캡스톤 팀 생성을 축하합니다.
-
-## 팀소개 및 페이지를 꾸며주세요.
-
-- 프로젝트 소개
-  - 프로젝트 설치방법 및 데모, 사용방법, 프리뷰등을 readme.md에 작성.
-  - Api나 사용방법등 내용이 많을경우 wiki에 꾸미고 링크 추가.
-
-- 팀페이지 꾸미기
-  - 프로젝트 소개 및 팀원 소개
-  - index.md 예시보고 수정.
-
-- GitHub Pages 리파지토리 Settings > Options > GitHub Pages 
-  - Source를 marster branch
-  - Theme Chooser에서 태마선택
-  - 수정후 팀페이지 확인하여 점검.
-
-**팀페이지 주소** -> https://kookmin-sw.github.io/ '{{자신의 리파지토리 아이디}}'
-
-**예시)** 2020년 0조  https://kookmin-sw.github.io/capstone-2020-0/
+# SEMO(Security Monitoring Platform)
+2020년 국민대학교 소프트웨어학부 캡스톤 디자인 프로젝트 <br>
+https://kookmin-sw.github.io/capstone-2020-7/
 
 
-## 내용에 아래와 같은 내용들을 추가하세요.
+# 프로젝트 소개
 
-### 1. 프로잭트 소개
+<img align="left" width="180" height="180" src="https://i.imgur.com/JlF1Rgj.png"></img>
+**프로젝트 명 : SEMO(Security Monitoring Platform)**
+---
+정보화 시대를 맞아 네트워크 트래픽의 양이 방대해지면서 보안분야에서의 보안 관제의 역할이 더욱 중요해지고 있다. SeMo는 이러한 문제를 해결하고자 보안관제사들이 자동 처리 규칙들을 업데이트하는 데 도움을 주기 위해서 고안된 프로젝트이다. 수집된 로그데이터를 받아서 딥러닝을 통해 정탐과 오탐 여부를 판별한 후 분석하여 사용자에게 분석결과를 시각화 하여 웹을 통해 보여준다.<br><br>
 
-프로젝트
+## Abstract
+As the amount of network traffic increases due to the information society, the role of security control is more important. Beacause of these problems, SEMO can help security controllers easily update automatic processing rules. Receive collected log data, determine whether or not the data were detected through deep learning, analyze it, visualize the analysis results to the user, and show it to the user via the web.
 
-### 2. 소개 영상
+  
+## 프로젝트 시나리오
+<img src="https://i.imgur.com/MamIpeD.png"></img>
 
-프로젝트 소개하는 영상을 추가하세요
+## 소개영상
 
-### 3. 팀 소개
+[![소개영상 링크](https://i.imgur.com/lhcCevZ.png)](https://www.youtube.com/watch?v=KdTk3ibeTUE&t=20s/)
+# 팀 소개
 
-팀을 소개하세요.
+## 지도 교수님
+<img align="left" width="15%" height="10%" src="https://wfile.kookmin.ac.kr/data/www/profile/2010/05/5c5e79ff50d88e225749756b6403b56d.gif"></img>
+```
+윤명근 교수님
 
-팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
+캡스톤 디자인 프로젝트 지도교수님
+프로젝트 검수
 
-### 4. 사용법
-
-소스코드제출시 설치법이나 사용법을 작성하세요.
-
-### 5. 기타
-
-추가적인 내용은 자유롭게 작성하세요.
-
-
-## Markdown을 사용하여 내용꾸미기
-
-Markdown은 작문을 스타일링하기위한 가볍고 사용하기 쉬운 구문입니다. 여기에는 다음을위한 규칙이 포함됩니다.
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+mkyoon@kookmin.ac.kr
 ```
 
-자세한 내용은 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## 팀명 : Do Mo!(Do Monitoring!)
+## 팀원 소개
 
-### Support or Contact
+<img align="left" width="165" height="165" src="https://i.imgur.com/O6FLiUL.jpg"></img>
+```
 
-readme 파일 생성에 추가적인 도움이 필요하면 [도움말](https://help.github.com/articles/about-readmes/) 이나 [contact support](https://github.com/contact) 을 이용하세요.
+전하훈 (Project Leader)
+
+Student ID : 20171697
+E-Mail : plmokn1007@kookmin.ac.kr
+Role : 머신러닝 모델 설계 및 구축, 논문 분석
+
+```
+
+
+<img align="left" width="165" height="165" src="https://i.imgur.com/PVr03kz.png"></img>
+```
+
+김성은
+
+Student ID : 20163093
+E-Mail : rlatjddms9736@kookmin.ac.kr
+Role : 데이터 분석 및 시각화, 피쳐 엔지니어링
+
+```
+
+
+<img align="left" width="165" height="165" src="https://i.imgur.com/BBtY9sZ.jpg"></img>
+```
+
+최운호
+
+Student ID : 20171711
+E-Mail : yms04089@kookmin.ac.kr
+Role : 웹 서버 구축, 웹 서버-모델 연동
+
+```
+
+
+<img align="left" width="165" height="165" src="https://i.imgur.com/cpi6IPu.jpg"></img>
+```
+
+최현인
+
+Student ID : 20171716
+E-Mail : gusdlsdlek@kookmin.ac.kr
+Role : ELK 구축 및 문서 작업, 서버 안정화
+
+```
+
+
+<img align="left" width="165" height="165" src="https://i.imgur.com/Cwoh5Fl.png"></img>
+```
+
+허윤서
+
+Student ID : 20153242
+E-Mail : sally159357@kookmin.ac.kr
+Role : 웹 프론트 구축, 웹-ELK 연동
+
+```
+## 참조(Reference)
+
+#### PAPER
+- [ADELE: Anomaly Detection from Event Log Empiricism](https://ieeexplore.ieee.org/document/8486257)
+- [DeepLog: Anomaly Detection and Diagnosis from System Logs through Deep Learning](https://dl.acm.org/doi/10.1145/3133956.3134015)
+- [ATTACK2VEC: Leveraging Temporal Word Embeddings to Understand the Evolution of Cyberattacks](https://arxiv.org/abs/1905.12590)
+- [Tiresias: Predicting Security Events Through Deep Learning](https://dl.acm.org/doi/10.1145/3243734.3243811)
+- [CNN and RNN based payload classification methods for attack detection](https://www.sciencedirect.com/science/article/abs/pii/S0950705118304325#b14)
+
+## Contatc Us
+``` Email : plmokn1007@kookmin.ac.kr ```
+
