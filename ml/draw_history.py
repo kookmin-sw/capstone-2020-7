@@ -16,3 +16,17 @@ def draw_history(history):
     label_value = ["loss", "acc", "precision", "recall"]
     for i, v in enumerate(label_value):
         draw_plot(history[i], v, history[i+4], "val_"+v, v.upper())
+
+
+
+
+
+if __name__=="__main__":
+    PATH = "INPUT_HISTORY_PATH"     # HISTORY_PATH
+    with open(PATH, "r") as f:
+        doc = f.read()
+
+    doc = doc.split('\n')
+
+    seq = extract(doc)
+    draw_history(seq)               # 사용법
