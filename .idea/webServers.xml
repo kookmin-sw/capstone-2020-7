@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="27cb67c7-37ae-4363-b766-f03f774be8e0" name="capstone7" url="http://203.246.112.139">
+        <fileTransfer host="203.246.112.139" port="32222" rootFolder="/home" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="32222" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
