@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
+from django.http import JsonResponse
 
 def index(request):
     return render(request, 'mainapp/index.html')
@@ -27,3 +28,13 @@ def login(request):
 
 
     return render(request, 'mainapp/login.html')
+
+
+def execut(request):
+    import subprocess
+
+    subprocess.call(['python', "./readtext.py"])
+
+    return JsonResponse({
+        'message': 'success',
+    },json_dumps_params={'ensure_ascii': False})

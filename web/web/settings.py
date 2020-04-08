@@ -25,7 +25,7 @@ SECRET_KEY = '*i+$i90szo(10hg@l_$f-opbawhp%b^dhr+3(0lffjydj&n(zx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Application definition
+ALLOWED_HOSTS = ['INPUT_YOUR_IP']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -48,6 +48,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'web.urls'
+
 
 TEMPLATES = [
     {
@@ -116,3 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
