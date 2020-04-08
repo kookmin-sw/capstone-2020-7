@@ -12,8 +12,23 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <script>
+    function execut(){
+      $.get("/execut",function(data) {
+          alert(data.message);
+      },'json')
+      .fail(function(data) {
+          alert("error" );
+      });
+
+    }
+  </script>
+
 </head>
 
 <body>
-  <button>Hover me</button>
+
+  <button onclick="execut()">Hover me</button>
+
 </body>

@@ -25,7 +25,6 @@ SECRET_KEY = '*i+$i90szo(10hg@l_$f-opbawhp%b^dhr+3(0lffjydj&n(zx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
