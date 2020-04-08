@@ -48,6 +48,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'web.urls'
 
+ALLOWED_HOST = ['INPUT_YOUR_IP']
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
