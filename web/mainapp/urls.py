@@ -8,6 +8,6 @@ urlpatterns = [
     url(r'^$', views.index), #위의 urls.py와는 달리 include가 없습니다.
     path('login/', views.login),
     path('admin/', admin.site.urls),
-
+    path('start/', views.kibana_page),
     path('execut/', views.execut),
 ]

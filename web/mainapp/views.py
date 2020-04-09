@@ -40,3 +40,6 @@ def execut(request):
         'message': 'success',
     },json_dumps_params={'ensure_ascii': False})
 
+
+def kibana_page(request):
+    return render(request, 'mainapp/index.html')
