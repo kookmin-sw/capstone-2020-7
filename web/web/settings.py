@@ -25,7 +25,7 @@ SECRET_KEY = '*i+$i90szo(10hg@l_$f-opbawhp%b^dhr+3(0lffjydj&n(zx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['INPUT_YOUR_IP']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -119,5 +119,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+   os.path.join(BASE_DIR, 'static'),
 )
+
+
