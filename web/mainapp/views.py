@@ -21,7 +21,7 @@ def login(request):
 
         if result :
             print("로그인 성공!")
-            return HttpResponse(status=200)
+            return render(request, 'mainapp/index.html')
 
         else:
             print("실패")
