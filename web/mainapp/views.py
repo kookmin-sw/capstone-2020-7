@@ -31,7 +31,7 @@ def login(request):
     return render(request, 'mainapp/login.html')
 
 
-def execut(request):
+def executepy(request):
     import subprocess
     import time
 
