@@ -33,12 +33,16 @@ def login(request):
 
 def execut(request):
     import subprocess
+    import time
 
-    subprocess.call(['python', "./readtext.py"])
+    for i in range(5):
+        time.sleep(3)
+        subprocess.call(['python', "./readtext.py"])
+        print(i)
 
     return JsonResponse({
         'message': 'success',
-    },json_dumps_params={'ensure_ascii': False})
+    }, json_dumps_params={'ensure_ascii': False})
 
 
 def kibana_page(request):

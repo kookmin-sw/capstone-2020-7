@@ -90,3 +90,5 @@
 	window.gnMenu = gnMenu;
 
 } )( window );
+
+new gnMenu( document.getElementById( 'gn-menu' ) );

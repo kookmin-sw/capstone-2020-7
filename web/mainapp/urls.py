@@ -5,7 +5,7 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^$', views.login), #위의 urls.py와는 달리 include가 없습니다.
+    path('', views.index), #위의 urls.py와는 달리 include가 없습니다.
     path('login/', views.login),
     path('admin/', admin.site.urls),
     path('start/', views.kibana_page),
