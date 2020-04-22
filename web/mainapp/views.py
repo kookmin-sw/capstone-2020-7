@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 
 def index(request):
-    return render(request, 'mainapp/index.html')
+    return render(request, 'mainapp/index2.html')
 
 @csrf_exempt
 def login(request):
@@ -21,7 +21,8 @@ def login(request):
 
         if result :
             print("로그인 성공!")
-            return HttpResponse(status=200)
+            return render(request, 'mainapp/index.html')
+
         else:
             print("실패")
             return HttpResponse(status=401)
@@ -30,11 +31,19 @@ def login(request):
     return render(request, 'mainapp/login.html')
 
 
-def execut(request):
+def executepy(request):
     import subprocess
+    import time
 
-    subprocess.call(['python', "./readtext.py"])
+    for i in range(5):
+        time.sleep(3)
+        subprocess.call(['python', "./readtext.py"])
+        print(i)
 
     return JsonResponse({
         'message': 'success',
-    },json_dumps_params={'ensure_ascii': False})
+    }, json_dumps_params={'ensure_ascii': False})
+
+
+def kibana_page(request):
+    return render(request, 'mainapp/index.html')
