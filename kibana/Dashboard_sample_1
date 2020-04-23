@@ -1,0 +1,31 @@
+<대시보드 – ver1. 종합>
+
+Visualizations 설명
+- semo introduction   -> # SEMO Project - Markdown ### 보안관제 플랫폼 대시보드
+**~~**
+- attackType – Horizontal Bar
+
+yaxis – Aggregation: count / xaxis – Aggregtaion:Histogram, Field:attackType, Minimum interval:1
+- 정오탐수 - Metric	
+
+yaxis – Aggregation: count / xaxis - Aggregation: Terms, Field: analyResult:keyword, Order by : Metric:count Order:Descending size:5  
+- Total sum – Gauge
+
+Xaxis – Aggregation:count
+- AttackType – Pie
+
+yaxis – Aggregation: count / xaxis – Aggregtaion:Histogram, Field:attackType, Minimum interval:1
+- 시간별 데이터 – Data Table
+
+yaxis – Aggregation: count / xaxis – Aggregtaion:Terms, Field:atdate, Order by : Metric:count Order:Descending size:15  
+
+- accidentType – Vertical Bar
+
+yaxis – Aggregation: count / xaxis – Aggregtaion:Histogram, Field:accidentType, Minimum interval:1
+- sourcePort – Line
+
+yaxis – Aggregation: count / xaxis – Aggregtaion:Histogram, Field:sourcePort, Minimum interval:1
+- destinationPort – Line
+
+yaxis – Aggregation: count / xaxis – Aggregtaion:significant Terms, Field:destination Port, Minimum interval:20
+
