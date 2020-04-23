@@ -1,0 +1,20 @@
+<대시보드 – ver2. >
+
+
+-	Atdate – Line
+
+Metrics Aggregation:Count / Buckets:Terms, Field:atdate, Order by:Metric:Count, Order:Descending Size:100
+-	DetectStart – Line
+
+Metrics Aggregation:Count / Buckets:Date Histogram, Field:detectStart, Minimum interval:Daily
+-	DetectEnd – Area
+
+Metrics Aggregation:Count / Buckets:Date Histogram, Field:detectEnd, Minimum interval:Daily
+-	대시보드2 – Markdown  -> # <대시보드2> ## 실시간 데이터 확인
+
+-	Total num – Gauge
+
+Aggregation:Count 
+-	AanylyResult=2 – Gauge
+
+Metrics Aggregation:Count / Buckets:Aggregation:Signigicant Term, Field:analyResult.keyword, Size:1
