@@ -15,7 +15,10 @@ As the amount of network traffic increases due to the information society, the r
 
   
 ## 프로젝트 시나리오
-<img src="https://i.imgur.com/MamIpeD.png"></img>
+<img src="https://i.imgur.com/3vw3LUJ.png"></img>
+
+## 모델 구조
+<img src="https://i.imgur.com/iV5p6Ci.png"></img>
 
 ## 소개영상
 
