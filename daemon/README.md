@@ -21,4 +21,50 @@
 
 ***
 
+# 2. Daemon 생성 단계
+## 2-1. 특정 시간 주기마다 log 파일로부터 한 줄 씩 읽어 핸들러 함수를 실행하는 프로그램 작성
+### 2-1-1. sample.py
+```
+import time
+
+# 핸들러
+def process_line(l):
+  print(l)
+
+with open('message.log') as f:
+  while True:
+    line = f.readline()
+    if not line:
+      time.sleep(0.5)
+      continue
+    process_line(line)
+```
+#### 2-1-1-1. sample.py 코드 설명
+1. message.log 파일을 읽기 모드로 연다.
+2. 무한루프로 한 줄 씩 읽으며 process_line() 함수를 실행한다.
+3. 만약 마지막 줄을 읽은 후 더 읽을 내용이 없다면 0.5초 후에 재시도한다.
+
+### 2-1-2. message.log
+    로그 파일 역할
+
+## 2-2. 처리흐름
+```
+$ touch message.log
+$ python sample.py&
+$ echo "hello" >> message.log
+```
+- 빈 파일(message.log) 생성
+- 파이썬 코드를 백그다운드에서 실행
+- 이 상태에서 log 파일에 메시지를 추가하면 곧 추가된 라인들이 출력
+
+## 2-3. Daemon process 확인 및 종료
+```
+ps 
+kill -9 PID
+```
+- 실행된 프로세스 확인
+- 프로세스 종료 
+
+
+
 
