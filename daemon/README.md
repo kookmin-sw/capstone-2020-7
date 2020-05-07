@@ -23,7 +23,25 @@
 
 # 2. Daemon 생성 단계
 ## 2-1. 특정 시간 주기마다 log 파일로부터 한 줄 씩 읽어 핸들러 함수를 실행하는 프로그램 작성
-### 2-1-1. sample.py
+### 2-1-1. first_daemon.py
+```
+import time
+
+# Full_data.log 를 다 읽어 doc에 저장
+with open('Full_data.log') as f:
+  doc = f.read()
+
+# 0.25초에 한 번씩 doc의 한 줄을 Add_data에 적어준다.
+for i in range(len(doc)):
+  with open('Realtime.log', 'a') as f:
+    f.write(str(i)+"\n")
+    time.sleep(0.25)
+```
+#### 2-1-1-1. first_daemon.py 코드 설명
+1. Full_data.log 파일을 연다.
+2. 0.25초에 한 번씩 Full_data.log의 한 줄을 Realtime.log에 적어준다.
+
+### 2-1-2. second_daemon.py
 ```
 import time
 
@@ -31,31 +49,36 @@ import time
 def process_line(l):
   print(l)
 
-with open('message.log') as f:
+# 1초에 한번씩 Realtime.log 파일 끝까지 읽는다.
+# Realtime.log에 0.25초에 한 줄씩 적히기 때문에 1초에 4줄이 출력된다.
+with open('Realtime.log') as f:
   while True:
     line = f.readline()
     if not line:
-      time.sleep(0.5)
+      time.sleep(1)
       continue
     process_line(line)
 ```
-#### 2-1-1-1. sample.py 코드 설명
-1. message.log 파일을 읽기 모드로 연다.
-2. 무한루프로 한 줄 씩 읽으며 process_line() 함수를 실행한다.
-3. 만약 마지막 줄을 읽은 후 더 읽을 내용이 없다면 0.5초 후에 재시도한다.
+#### 2-1-2-1. second_daemon.py 코드 설명
+1. Realtime.log 파일을 연다.
+2. 무한루프를 통해 **마지막 read 지점부터** 1초 한 번씩 파일을 읽으며 process_line() 함수를 실행한다.
+3. 만약 마지막 줄을 읽은 후 더 읽을 내용이 없다면 1초 후에 재시도한다.
 
-### 2-1-2. message.log
-    로그 파일 역할
+### 2-1-3. Full_data.log
+    전체 로그 데이터 역할
+
+### 2-1-4. Realtime.log
+    실시간 로그 데이터 역할
 
 ## 2-2. 처리흐름
 ```
-$ touch message.log
-$ python sample.py&
-$ echo "hello" >> message.log
+$ python second_daemon.py&
+$ python first_daemon.py&
 ```
-- 빈 파일(message.log) 생성
-- 파이썬 코드를 백그다운드에서 실행
-- 이 상태에서 log 파일에 메시지를 추가하면 곧 추가된 라인들이 출력
+1. second_daemon을 백그라운드로 실행
+2. first_daemon을 백그라운드로 실행
+3. Full_data.log 의 데이터가 0.25초 마다 한줄씩 Realtime.log 에 써지며
+4. 1초마다 그 동안 쓰인 Realtime.log의 데이터를 출력한다.
 
 ## 2-3. Daemon process 확인 및 종료
 ```
