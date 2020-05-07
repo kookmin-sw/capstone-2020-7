@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="YOUR_IP" id="8fec458e-2afa-4e2b-943d-00cd1fde1e62" port="YOUR_PORT_NUM" customName="capstone7" nameFormat="CUSTOM" />
+    </configs>
+  </component>
+</project>
