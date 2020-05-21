@@ -26,3 +26,23 @@ def grouped_data(
         output['payload'].append(list(temp['payload']))
         output['id'].append(list(temp[UNIQUE_ID]))
     return output
+
+
+
+def get_model(WEIGHT_PATH="./model_weight.h5"):
+    from now_pre_model import now_pre_RedDNN
+    model = now_pre_RedDNN()
+    model.load_weights(WEIGHT_PATH)
+    model.compile(loss='binary_crossentropy', optimizer='adam')
+    return model
+
+
+def preprocessing(data):
+    from now_pre_model import preprocessing_payload
+    output = {'pre':[], 'now':[], 'id':[]}
+    for payloads, ids in zip(data['payload'], data['id']):
+        pre, now = preprocessing_payload(payloads)
+        output['pre'].extend(pre)
+        output['now'].extend(now)
+        output['id'].extend(ids)
+    return output
