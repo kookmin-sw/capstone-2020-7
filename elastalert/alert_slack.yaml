@@ -1,0 +1,23 @@
+type: flatline
+index: elastalert_status_status*
+
+threshold: 0
+timeframe:
+  hours: 24
+
+use_count_query: true
+use_terms_query: false
+doc_type: "doc"
+
+alert:
+- "email"
+- "slack"
+
+email:
+- "hyoonseo159357@gmail.com"
+
+slack:
+slack_webhook_url: "https://hooks.slack.com/services/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"
+slack_username_override: 'hyoonseo159357'
+slack_channel_override: '#elastalert'
+slack_emoji_override: ':pizza:'
