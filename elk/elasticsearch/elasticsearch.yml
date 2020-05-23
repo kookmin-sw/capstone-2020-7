@@ -30,11 +30,11 @@ node.name: master
 #
 # Path to directory where to store the data (separate multiple locations by comma):
 #
-path.data: /home/capstone7/ELK/elasticsearch-7.7.0/lib
+path.data: /es-home-path/elasticsearch-7.7.0/lib
 #
 # Path to log files:
 #
-path.logs: /home/capstone7/ELK/elasticsearch-7.7.0/logs
+path.logs: /es-home-path/elasticsearch-7.7.0/logs
 #
 # ----------------------------------- Memory -----------------------------------
 #
