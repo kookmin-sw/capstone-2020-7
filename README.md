@@ -1,6 +1,8 @@
 # SEMO(Security Monitoring Platform)
 2020년 국민대학교 소프트웨어학부 캡스톤 디자인 프로젝트 <br>
 https://kookmin-sw.github.io/capstone-2020-7/
+중간발표 영상 링크 : https://youtu.be/UWzhshno8Rw
+
 
 
 # 프로젝트 소개
@@ -15,7 +17,10 @@ As the amount of network traffic increases due to the information society, the r
 
   
 ## 프로젝트 시나리오
-<img src="https://i.imgur.com/MamIpeD.png"></img>
+<img src="https://i.imgur.com/3vw3LUJ.png"></img>
+
+## 모델 구조
+<img src="https://i.imgur.com/iV5p6Ci.png"></img>
 
 ## 소개영상
 
