@@ -4,9 +4,9 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    path('', views.index),
+    #path('', views.index),
+    path('', views.kibana_page),
     path('login/', views.login),
     path('admin/', admin.site.urls),
-    path('start/', views.kibana_page),
     path('executepy/', views.executepy),
 ]
