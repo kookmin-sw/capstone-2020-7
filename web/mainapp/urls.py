@@ -9,4 +9,5 @@ urlpatterns = [
     path('login/', views.login),
     path('admin/', admin.site.urls),
     path('executepy/', views.executepy),
+    path('dashboardtwo', views.kibana_page2),
 ]

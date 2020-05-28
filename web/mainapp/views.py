@@ -47,3 +47,6 @@ def executepy(request):
 
 def kibana_page(request):
     return render(request, 'mainapp/index.html')
+
+def kibana_page2(request):
+    return render(request, 'mainapp/index_for_dashboard2.html')
