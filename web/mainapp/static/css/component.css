@@ -29,15 +29,18 @@
 		line-height: 60px;
 }
 
+/*상단바전체*/
 .gn-menu-main {
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 60px;
+		/*height: 60px;*/
+		height:20%;
 		font-size: 13px;
 }
 
+/* 마우스 올리면 검은색 */
 .gn-menu-main a {
 		display: block;
 		height: 100%;
@@ -52,11 +55,33 @@
 		background: #5f6f81;
 		color: white;
 }
+/*상단바 위 부분*/
+.logo-bar{
+    width:100%;
+    height:70%;
+    background-color: white;
+	text-align: center;
+	border-bottom: thin solid #5f6f81;
+}
+.logo{
+	margin-top: 1%;
+	 width: auto; height: auto;
+    max-width: 100px;
+    max-height: 100px;
 
+}
+
+/* main 내용 상단에 빈 공간 추가하기 */
+.Add-space{
+	 Padding-top: 9%;
+}
+
+/*상단바 아래 부분 모든 li 적용 */
 .gn-menu-main > li {
 		display: block;
 		float: left;
-		height: 100%;
+		/*height: 100%;*/
+		height:30%;
 		border-right: 1px solid #c6d0da;
 		text-align: center;
 }
@@ -92,10 +117,11 @@
 		clear: both;
 		content: "";
 }
-
+/* 왼쪽 trigger*/
 .gn-menu-wrapper {
 		position: fixed;
-		top: 60px;
+		/*top: 60px;*/
+		top:194px;
 		bottom: 0;
 		left: 0;
 		overflow: hidden;
@@ -204,11 +230,13 @@ input.gn-search:focus {
 		color: white
 }
 
+/* 트리거 메뉴 왼쪽 아이콘 */
 .gn-menu-main a.gn-icon-search {
 		position: absolute;
 		top: 0;
 		left: 0;
-		height: 60px;
+		/*height: 60px;*/
+		height : 55px;
 }
 
 .gn-icon::before {
