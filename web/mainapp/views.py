@@ -29,3 +29,22 @@ def kibana_page(request):
 
 def kibana_page2(request):
     return render(request, 'mainapp/index_for_dashboard2.html')
+
+def Login(request):
+
+    if request.method == 'POST':
+        id = request.POST.get('userid','')
+        pw = request.POST.get('userpw', '')
+
+        result = authenticate(username=id, password=pw)
+
+        if result :
+            print("로그인 성공!")
+            return render(request, 'mainapp/index.html')
+
+        else:
+            print("실패")
+            return render(request, 'mainapp/Login.html')
+
+
+    return render(request, 'mainapp/Login.html')
