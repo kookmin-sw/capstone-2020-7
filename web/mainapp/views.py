@@ -3,19 +3,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from django.http import JsonResponse
-
-def index(request):
-    return render(request, 'mainapp/index2.html')
-
 @csrf_exempt
 def login(request):
 
     if request.method == 'POST':
-        #print("리퀘스트 로그" + str(request.body))
         id = request.POST.get('userid','')
         pw = request.POST.get('userpw', '')
-        #print("id = " + id + " pw = " + pw)
 
         result = authenticate(username=id, password=pw)
 
@@ -25,25 +18,14 @@ def login(request):
 
         else:
             print("실패")
-            return HttpResponse(status=401)
+            return render(request, 'mainapp/login.html')
 
 
     return render(request, 'mainapp/login.html')
 
 
-def executepy(request):
-    import subprocess
-    import time
-
-    for i in range(5):
-        time.sleep(3)
-        subprocess.call(['python', "./readtext.py"])
-        print(i)
-
-    return JsonResponse({
-        'message': 'success',
-    }, json_dumps_params={'ensure_ascii': False})
-
-
 def kibana_page(request):
     return render(request, 'mainapp/index.html')
+
+def kibana_page2(request):
+    return render(request, 'mainapp/index_for_dashboard2.html')

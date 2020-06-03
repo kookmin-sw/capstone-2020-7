@@ -14,6 +14,7 @@
 		src: url("../fonts/ecoicons/ecoicons.eot?#iefix") format("embedded-opentype"), url("../fonts/ecoicons/ecoicons.woff") format("woff"), url("../fonts/ecoicons/ecoicons.ttf") format("truetype"), url("../fonts/ecoicons/ecoicons.svg#ecoicons") format("svg");
 }
 
+
 /* Icomoon.com */
 
 .gn-menu-main,
@@ -27,17 +28,22 @@
 		font-weight: 300;
 		font-family: 'Lato', Arial, sans-serif;
 		line-height: 60px;
+		border-bottom: thin solid #5f6f81;
+
 }
 
+/*상단바전체*/
 .gn-menu-main {
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 60px;
+		height:20%;
+		min-height: 150px;
 		font-size: 13px;
 }
 
+/* 마우스 올리면 검은색 */
 .gn-menu-main a {
 		display: block;
 		height: 100%;
@@ -52,11 +58,37 @@
 		background: #5f6f81;
 		color: white;
 }
+/*상단바 위 부분*/
+.logo-bar{
+    width:100%;
+    height:70%;
+    background-color: white;
+	text-align: center;
+	border-bottom: thin solid #5f6f81;
+}
+.logo{
+	margin-top: 1%;
+	width: auto; height: auto;
+    max-width: 80%;
+    max-height: 80%;
+}
+.menu-icon{
+	margin-top: 1%;
+	width: auto; height: auto;
+    max-width: 80%;
+    max-height: 80%;
+}
 
+/* main 내용 상단에 빈 공간 추가하기 */
+.top-space{
+	display: block;
+}
+
+/*상단바 아래 부분 모든 li 적용 */
 .gn-menu-main > li {
 		display: block;
 		float: left;
-		height: 100%;
+		height:30%;
 		border-right: 1px solid #c6d0da;
 		text-align: center;
 }
@@ -75,9 +107,9 @@
 }
 
 .gn-menu-main > li:last-child {
-		float: right;
-		border-right: none;
-		border-left: 1px solid #c6d0da;
+		float: left;
+		border-left: none;
+		border-right: 1px solid #c6d0da;
 }
 
 .gn-menu-main > li > a {
@@ -85,6 +117,7 @@
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		font-weight: bold;
+
 }
 
 .gn-menu-main:after {
@@ -92,10 +125,10 @@
 		clear: both;
 		content: "";
 }
-
+/* 왼쪽 trigger*/
 .gn-menu-wrapper {
 		position: fixed;
-		top: 60px;
+		top:194px;
 		bottom: 0;
 		left: 0;
 		overflow: hidden;
@@ -204,13 +237,16 @@ input.gn-search:focus {
 		color: white
 }
 
+/* 트리거 메뉴 왼쪽 아이콘 */
 .gn-menu-main a.gn-icon-search {
 		position: absolute;
 		top: 0;
 		left: 0;
-		height: 60px;
+		/*height: 60px;*/
+		height : 55px;
 }
 
+/* 왼쪽 메뉴바 각 요소 */
 .gn-icon::before {
 		display: inline-block;
 		width: 60px;
@@ -277,15 +313,15 @@ input.gn-search:focus {
 		display: block;
 		overflow: hidden;
 }
-
 .gn-icon-menu::before {
-		margin-left: -15px;
-		vertical-align: -2px;
-		width: 30px;
-		height: 3px;
-		background: #5f6f81;
-		box-shadow: 0 3px white, 0 -6px #5f6f81, 0 -9px white, 0 -12px #5f6f81;
-		content: '';
+	/*display: block;*/
+	margin-left: -15px;
+	vertical-align: 3px;
+	width: 30px;
+	height: 3px;
+	background: #5f6f81;
+	box-shadow: 0 3px white, 0 -6px #5f6f81, 0 -9px white, 0 -12px #5f6f81;
+	content: '';
 }
 
 .no-touch .gn-icon-menu:hover::before,
