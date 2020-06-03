@@ -38,8 +38,13 @@
 		top: 0;
 		left: 0;
 		width: 100%;
+<<<<<<< HEAD
 		height:20%;
 		min-height: 150px;
+=======
+		/*height: 60px;*/
+		height:20%;
+>>>>>>> fcb6b4a260084225316d58fd49581f59163be104
 		font-size: 13px;
 }
 
@@ -68,6 +73,7 @@
 }
 .logo{
 	margin-top: 1%;
+<<<<<<< HEAD
 	width: auto; height: auto;
     max-width: 80%;
     max-height: 80%;
@@ -84,10 +90,27 @@
 	display: block;
 }
 
+=======
+	 width: auto; height: auto;
+    max-width: 100px;
+    max-height: 100px;
+
+}
+
+/* main 내용 상단에 빈 공간 추가하기 */
+.Add-space{
+	 Padding-top: 9%;
+}
+
+>>>>>>> fcb6b4a260084225316d58fd49581f59163be104
 /*상단바 아래 부분 모든 li 적용 */
 .gn-menu-main > li {
 		display: block;
 		float: left;
+<<<<<<< HEAD
+=======
+		/*height: 100%;*/
+>>>>>>> fcb6b4a260084225316d58fd49581f59163be104
 		height:30%;
 		border-right: 1px solid #c6d0da;
 		text-align: center;
@@ -128,6 +151,10 @@
 /* 왼쪽 trigger*/
 .gn-menu-wrapper {
 		position: fixed;
+<<<<<<< HEAD
+=======
+		/*top: 60px;*/
+>>>>>>> fcb6b4a260084225316d58fd49581f59163be104
 		top:194px;
 		bottom: 0;
 		left: 0;
