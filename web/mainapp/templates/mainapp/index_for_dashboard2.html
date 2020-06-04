@@ -1,3 +1,4 @@
+{% if user.is_active %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -36,17 +37,17 @@
                                                                         <a class="gn-icon gn-icon-search"><span>search</span></a>
                                                                 </li>
                                                                 <li>
-                                                                        <a class="gn-icon gn-icon-download"onclick="location.href='http://203.246.112.139:38080/'"
+                                                                        <a class="gn-icon gn-icon-download"onclick="location.href='http://203.246.112.139:38080/dashboard'"
  >종합분석대시보드</a>
                                                                 </li>
                                                                 <li><a class="gn-icon gn-icon-cog" onclick="location.href='http://203.246.112.139:38080/dashboardtwo'"
 >위험탐지대시보드</a></li>
                                                                 <li><a class="gn-icon gn-icon-help">Github</a></li>
                                                                 <li>
-                                                                        <a class="gn-icon gn-icon-archive">Contact</a>
+                                                                        <a class="gn-icon gn-icon-archive" onclick="location.href='http://203.246.112.139:38080/Logout'">Logout</a>
                                                                 </li>
                                                         </ul>
-                                                </div><!-- /gn-scroller -->
+                                                                                                    </div><!-- /gn-scroller -->
                                         </nav>
                                 </li>
 <!--                                <li><a href="http://tympanus.net/codrops">MENU1</a></li>-->
@@ -73,3 +74,25 @@
                 </script>
         </body>
 </html>
+{% else %}
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>Login</title>
+                <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}" >
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"><!--아이콘두개-->
+        </head>
+        <body>
+                 <div class="logo-bar">
+                        <img class="logo" src="{% static "img/main_logo.png" %}" height="150px" align="center" />
+                  </div>
+                <div class="login">
+                        <h1>Login</h1>
+                        <form class="form-signin" method="POST" action="/">{% csrf_token %}
+                                <label for="username">                                                                                                                                                                               <i class="fas fa-user"></i>                                                                                                                                                          </label>                                                                                                                                                                                     <input type="text" id="userid" name="userid" class="form-control" placeholder="ID" autofocus=""/>                                                                                            <label for="password">                                                                                                                                                                               <i class="fas fa-lock"></i>                                                                                                                                                          </label>                                                                                                                                                                                     <input type="password" id="userpw" name="userpw" class="form-control" placeholder="Password"/>                                                                                               <input type="submit" value="Submit" class="btn btn-lg btn-primary btn-block">                                                                                                        </form>                                                                                                                                                                              </div>                                                                                                                                                                               </body>
+</html>
+
+{% endif %}
