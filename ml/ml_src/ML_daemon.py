@@ -3,6 +3,7 @@
 
 import time
 import csv
+import pandas as pd
 
 header = ['_id', 'accidentType', 'analyResult', 'atdate', 'attackType',
        'autoEmailSendFlag', 'autoFlag', 'batchID', 'destinationIP',
@@ -11,6 +12,9 @@ header = ['_id', 'accidentType', 'analyResult', 'atdate', 'attackType',
        'eventType', 'jumboPayloadFlag', 'metaType', 'orgIDX', 'packetSize',
        'payload', 'protocol', 'sourceIP', 'sourcePort', 'stdrPort', 'uid',
        'vfnStatus', 'vfnUpdate', 'accidentProcessFlag']
+
+
+db = pd.read_pickle("~/elk_model_test/loc_db.pickle")
 
 
 def data_loader(LOG_DATA_PATH = "./20181201000000.pkl"):
@@ -53,9 +57,30 @@ def preprocessing(data):
     return output
 
 
+def ip_convert(ip):
+    output = []
+    ip += 2**32
+    for i in range(4):
+        output.append(str((ip >> 8*i) & 255))
+    return ".".join(output[::-1])
+
+
+
 def concatenate_pred_table(pred, table):
+    global db
+    src_ip = []
+    dst_ip = [] 
+    src_loc = []
+    dst_loc = []
     for _id in pred.keys():
-        table[_id]['label'] = pred[_id]
+        table[_id]['analyResult'] = pred[_id]
+        temp_src = ip_convert(int(table[_id]['sourceIP']))
+        temp_dst = ip_convert(int(table[_id]['destinationIP']))
+        src_ip.append(temp_src)
+        dst_ip.append(temp_dst)
+        src_loc.append(db[temp_src])
+        dst_loc.append(db[temp_dst])
+    return src_ip, dst_ip, src_loc, dst_loc
 
 
 def labeling(data, predicts, THRESH_HOLD = 0.5):
@@ -146,23 +171,43 @@ def process_line(data):
   pred = model.predict({"pre_pay": np.array(data['pre']),
                       "now_pay": np.array(data['now'])}, verbose=True)
   pred = labeling(data, pred)
-  concatenate_pred_table(pred, _id_table)
+  src_ip, dst_ip, src_loc, dst_loc = concatenate_pred_table(pred, _id_table)
   output = pd.DataFrame(_id_table).T
-  output.to_csv("./livetest222.csv", mode="a", index=False, header=False)  
+  output["srcLOC"] = src_loc
+  output['dstLOC'] = dst_loc
+  output['srcIP'] = src_ip
+  output['dstIP'] = dst_ip
+  output.to_csv("/home/capstone7/elk_model_test/testing/HH_test.csv", mode="a", index=False, header=False)  
 
 
+
+
+
+#  with open("final_out.csv", "a", newline="") as f:
+#    wr = csv.writer(f)
+#    for d in data:
+#      print(d)
+#      wr.writerow(d)
+
+
+
+#  with open('./output.csv', 'a') as fw:
+#    write_file = csv.writer(fw)
+#    write_file.writerow(l)
 
 model = get_model()
 
 
 
 
-with open('./logdata.log', 'r') as fr:
+with open('./logdata2.log', 'r') as fr:
   data = []
   while True:
     line = fr.readline()
     if not line:
       time.sleep(10)
+#      process_line(data)
+#      data = []
       continue
     if line != "":
       if line[-1] == '\n':
