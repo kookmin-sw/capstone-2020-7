@@ -1,77 +1,58 @@
+
+
 {% if user.is_authenticated %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-        <head>
-                <meta charset="UTF-8" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>SEMO</title>
-                <meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
-                <meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
-                <meta name="author" content="Codrops" />
-                <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
-                <link rel="stylesheet" href="{% static 'css/demo.css' %}">
-                <link rel="stylesheet" href="{% static 'css/component.css' %}">
-                <script src="{% static 'js/modernizr.custom.js' %}"> </script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        </head>
 
-        <body>
-                <div class="container">
-                        <ul id="gn-menu" class="gn-menu-main">
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Semo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                                <div class="logo-bar">
-                                        <img class="logo" src="{% static "img/main_logo.png" %}">
-                                </div>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="{% static 'css/style1.css' %}" />
 
-                                <li class="gn-trigger">
-                                        <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
-                                        <nav class="gn-menu-wrapper">
-                                                <div class="gn-scroller">
-                                                        <ul class="gn-menu">
-                                                                <li class="gn-search-item">
-                                                                        <input placeholder="Search" type="search" class="gn-search">
-                                                                        <a class="gn-icon gn-icon-search"><span>search</span></a>
-                                                                </li>
-                                                                <li>
-                                                                        <a class="gn-icon gn-icon-download"onclick="location.href='http://203.246.112.139:38080/dashboard'"
- >종합분석대시보드</a>
-                                                                </li>
-                                                                <li><a class="gn-icon gn-icon-cog" onclick="location.href='http://203.246.112.139:38080/dashboardtwo'"
->위험탐지대시보드</a></li>
-                                                                <li><a class="gn-icon gn-icon-help">Github</a></li>
-                                                                <li>
-                                                                        <a class="gn-icon gn-icon-archive" onclick="location.href='http://203.246.112.139:38080/Logout'">Logout</a>
-                                                                </li>
-                                                        </ul>
-                                                </div><!-- /gn-scroller -->
-                                        </nav>
-                                                            </li>
-<!--                                <li><a href="">Menu1</a></li>-->
-<!--                                <li><a  href=""><span>Menu2</span></a></li>-->
-<!--                                <li><a  href=""><span>Articles</span></a></li>-->
-                        </ul>
+  </head>
+  <body>
 
-                </div>
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
 
-                <div class="top-space">
+				<div class="logo-bar">
+					<img class="logo" src="{% static "img/logo.png" %}">
+				</div>
 
-                </div>
+				<ul class="list-unstyled components mb-5">
+				  <li class="active">
+					<a href="#"><span class="fa fa-home"></span> Home</a>
+				  </li>
+				  <li>
+					  <a href="http://203.246.112.139:38080/dashboard"><span class="fa fa-bar-chart"></span> 종합분석<br>대시보드</a>
+				  </li>
+				  <li>
+					<a href="http://203.246.112.139:38080/dashboardtwo"><span class="fa fa-exclamation-triangle"></span> 위험탐지<br>대시보드</a>
+				  </li>
+				  <li>
+					<a href="https://github.com/kookmin-sw/capstone-2020-7"><span class="fa fa-github"></span> Github</a>
+				  </li>
+				  <li>
+					<a href="http://203.246.112.139:38080/Logout"><span class="fa fa-sign-out"></span> Logout</a>
+				  </li>
+				</ul>
 
-                <iframe src="http://203.246.112.139:35601/app/kibana#/dashboard/c0425600-9dd1-11ea-9d9c-6777142a4ace?embed=true&embed=true&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(),gridData:(h:11,i:'9e8cae73-f965-4147-837d-497769891ec3',w:12,x:0,y:0),id:'05abf240-9dce-11ea-9d9c-6777142a4ace',panelIndex:'9e8cae73-f965-4147-837d-497769891ec3',type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:11,i:bf68a1f7-edf0-40d1-8d94-6fd17bd45056,w:36,x:12,y:0),id:'3d217c90-9dce-11ea-9d9c-6777142a4ace',panelIndex:bf68a1f7-edf0-40d1-8d94-6fd17bd45056,type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:7,i:d81e0794-e8ec-4100-aeb3-c477c4409599,w:24,x:0,y:11),id:a6669200-9ddb-11ea-9d9c-6777142a4ace,panelIndex:d81e0794-e8ec-4100-aeb3-c477c4409599,type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:7,i:'3f50090b-0b35-424e-9fdf-74dcc7600b11',w:12,x:24,y:11),id:'313ae350-9dd1-11ea-9d9c-6777142a4ace',panelIndex:'3f50090b-0b35-424e-9fdf-74dcc7600b11',type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:7,i:'4908852d-9598-45d7-87cd-8b47c463a1b3',w:12,x:36,y:11),id:'93a80810-9dd1-11ea-9d9c-6777142a4ace',panelIndex:'4908852d-9598-45d7-87cd-8b47c463a1b3',type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:7,i:e9b815c6-84df-4a19-95db-cab59d36597f,w:24,x:0,y:18),id:c73bb8c0-9ddb-11ea-9d9c-6777142a4ace,panelIndex:e9b815c6-84df-4a19-95db-cab59d36597f,type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:7,i:c8bba63a-c872-4285-814e-1e51e6dd2786,w:24,x:24,y:18),id:'69860d20-9dd1-11ea-9d9c-6777142a4ace',panelIndex:c8bba63a-c872-4285-814e-1e51e6dd2786,type:visualization,version:'7.7.0')),query:(language:kuery,query:''),timeRestore:!f,title:Dashboard1_%EC%A2%85%ED%95%A9%EB%B6%84%EC%84%9D%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C,viewMode:view)&_g=(filters:!(),refreshInterval:(pause:!f,value:3000),time:(from:now-5y,to:now))" height="800" width="100%" fullScreenMode=!f></iframe>
+			</nav>
+      			<iframe src="http://203.246.112.139:35601/goto/231a75de90b4be17d2e7078ad9f051b7" height="1500" width="100%" fullScreenMode=!f></iframe>
 
-                <script src="{% static 'js/classie.js' %}"> </script>
-                <script src="{% static 'js/gnmenu.js' %}"> </script>
+		</div>
 
-                <script>
-                    $(window).resize(function () {
-                      var top = $(".gn-menu-main").height();
-                      $('.top-space').css("height",top+"px");
-                      $('.gn-menu-wrapper').css("top",top+1+"px");
-                    }).resize()
-                </script>
-        </body>
+      <script src="{% static 'js/bootstrap.min.js' %}"> </script>
+      <script src="{% static 'js/jquery.min.js' %}"> </script>
+      <script src="{% static 'js/main.js' %}"> </script>
+      <script src="{% static 'js/popper.js' %}"> </script>
+
+  </body>
 </html>
 
 
@@ -87,6 +68,13 @@
                                         <i class="fas fa-user"></i>
                                 </label>
                                 <input type="text" id="userid" name="userid" class="form-control" placeholder="ID" autofocus=""/>
-                                <label for="password">                                                                                                                                                                               <i class="fas fa-lock"></i>                                                                                                                                                          </label>                                                                                                                                                                                     <input type="password" id="userpw" name="userpw" class="form-control" placeholder="Password"/>                                                                                               <input type="submit" value="Submit" class="btn btn-lg btn-primary btn-block">                                                                                                        </form>                                                                                                                                                                              </div>                                                                                                                                                                               </body>
+                                <label for="password">
+                                        <i class="fas fa-lock"></i>
+                                </label>
+                                <input type="password" id="userpw" name="userpw" class="form-control" placeholder="Password"/>
+                                <input type="submit" value="Submit" class="btn btn-lg btn-primary btn-block">
+                        </form>
+                </div>
+        </body>
 </html>
 {%endif%}

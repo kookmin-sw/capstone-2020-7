@@ -1,80 +1,61 @@
-{% if user.is_active %}
+
+{% if user.is_authenticated %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-        <head>
-                <meta charset="UTF-8" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>SEMO</title>
-                <meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
-                <meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
-                <meta name="author" content="Codrops" />
-                <link rel="shortcut icon" href="../favicon.ico">
-                <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
-                <link rel="stylesheet" href="{% static 'css/demo.css' %}">
-                <link rel="stylesheet" href="{% static 'css/component.css' %}">
-                <script src="{% static 'js/modernizr.custom.js' %}"> </script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        </head>
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Semo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <body>
-                <div class="container">
-                        <ul id="gn-menu" class="gn-menu-main">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="{% static 'css/style1.css' %}" />
 
-                                <div class="logo-bar">
-                                        <img class="logo" src="{% static "img/main_logo.png" %}">
-                                </div>
+  </head>
+  <body>
 
-                                <li class="gn-trigger">
-                                        <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
-                                        <nav class="gn-menu-wrapper">
-                                                <div class="gn-scroller">
-                                                        <ul class="gn-menu">
-                                                                <li class="gn-search-item">
-                                                                        <input placeholder="Search" type="search" class="gn-search">
-                                                                        <a class="gn-icon gn-icon-search"><span>search</span></a>
-                                                                </li>
-                                                                <li>
-                                                                        <a class="gn-icon gn-icon-download"onclick="location.href='http://203.246.112.139:38080/dashboard'"
- >종합분석대시보드</a>
-                                                                </li>
-                                                                <li><a class="gn-icon gn-icon-cog" onclick="location.href='http://203.246.112.139:38080/dashboardtwo'"
->위험탐지대시보드</a></li>
-                                                                <li><a class="gn-icon gn-icon-help">Github</a></li>
-                                                                <li>
-                                                                        <a class="gn-icon gn-icon-archive" onclick="location.href='http://203.246.112.139:38080/Logout'">Logout</a>
-                                                                </li>
-                                                        </ul>
-                                                                                                    </div><!-- /gn-scroller -->
-                                        </nav>
-                                </li>
-<!--                                <li><a href="http://tympanus.net/codrops">MENU1</a></li>-->
-<!--                                <li><a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/HeaderEffects/"><span>MENU2</span></a></li>-->
-<!--                                <li><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16030"><span>ARTICLES</span></a></li>-->
-                        </ul>
-                </div>
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
 
-                <div class="top-space">
+				<div class="logo-bar">
+					<img class="logo" src="{% static "img/logo.png" %}">
+				</div>
 
-                </div>
+				<ul class="list-unstyled components mb-5">
+				  <li class="active">
+					<a href="#"><span class="fa fa-home"></span> Home</a>
+				  </li>
+				  <li>
+					  <a href="http://203.246.112.139:38080/dashboard"><span class="fa fa-bar-chart"></span> 종합분석<br>대시보드</a>
+				  </li>
+				  <li>
+					<a href="http://203.246.112.139:38080/dashboardtwo"><span class="fa fa-exclamation-triangle"></span> 위험탐지<br>대시보드</a>
+				  </li>
+				  <li>
+					<a href="https://github.com/kookmin-sw/capstone-2020-7"><span class="fa fa-github"></span> Github</a>
+				  </li>
+				  <li>
+					<a href="http://203.246.112.139:38080/Logout"><span class="fa fa-sign-out"></span> Logout</a>
+				  </li>
+				</ul>
 
-                <iframe class="Add-space" src="http://203.246.112.139:35601/app/kibana#/dashboard/fb52e060-9ddc-11ea-9d9c-6777142a4ace?embed=true&embed=true&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(),gridData:(h:9,i:b27a9b2d-dd6e-4ec5-9fa2-a62e4d54d436,w:13,x:0,y:0),id:'0239ea10-9ddb-11ea-9d9c-6777142a4ace',panelIndex:b27a9b2d-dd6e-4ec5-9fa2-a62e4d54d436,type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:9,i:'098775d1-2991-4884-8d1b-840911844f20',w:11,x:13,y:0),id:'67be12d0-9ddb-11ea-9d9c-6777142a4ace',panelIndex:'098775d1-2991-4884-8d1b-840911844f20',type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:9,i:'3cccc673-e88e-4a4b-8e8b-854e80187cf5',w:12,x:24,y:0),id:'943165e0-9ddd-11ea-9d9c-6777142a4ace',panelIndex:'3cccc673-e88e-4a4b-8e8b-854e80187cf5',type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:9,i:af7da873-e735-41d0-aa5b-38aa2032cbc8,w:12,x:36,y:0),id:cd57fb90-9ddd-11ea-9d9c-6777142a4ace,panelIndex:af7da873-e735-41d0-aa5b-38aa2032cbc8,type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:9,i:c06fa692-b247-46d8-aa4a-e2195335aa69,w:16,x:0,y:9),id:'3ed8d640-9dde-11ea-9d9c-6777142a4ace',panelIndex:c06fa692-b247-46d8-aa4a-e2195335aa69,type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:9,i:'26e0c20f-3133-475d-8d3e-f5d6def02f18',w:32,x:16,y:9),id:faaddbe0-9dde-11ea-9d9c-6777142a4ace,panelIndex:'26e0c20f-3133-475d-8d3e-f5d6def02f18',type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:8,i:'300f98f4-d599-4d6a-9216-5aa441e63af2',w:16,x:0,y:18),id:'1ad0d430-9de0-11ea-9d9c-6777142a4ace',panelIndex:'300f98f4-d599-4d6a-9216-5aa441e63af2',type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:8,i:'80e63890-8fa0-4873-85d4-d7d7b136a9e1',w:23,x:16,y:18),id:c0785c50-9de0-11ea-9d9c-6777142a4ace,panelIndex:'80e63890-8fa0-4873-85d4-d7d7b136a9e1',type:visualization,version:'7.7.0')),query:(language:kuery,query:''),timeRestore:!f,title:Dashboard2_%EC%9C%84%ED%97%98%ED%83%90%EC%A7%80%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C,viewMode:view)&_g=(filters:!(),refreshInterval:(pause:!f,value:3000),time:(from:now-5y,to:now))" height="800" width="100%" fullScreenMode=!f></iframe>
+			</nav>
+                <iframe class="Add-space" src="http://203.246.112.139:35601/app/kibana#/dashboard/fb52e060-9ddc-11ea-9d9c-6777142a4ace?embed=true&embed=true&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(),gridData:(h:9,i:b27a9b2d-dd6e-4ec5-9fa2-a62e4d54d436,w:13,x:0,y:0),id:'0239ea10-9ddb-11ea-9d9c-6777142a4ace',panelIndex:b27a9b2d-dd6e-4ec5-9fa2-a62e4d54d436,type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:9,i:'098775d1-2991-4884-8d1b-840911844f20',w:11,x:13,y:0),id:'67be12d0-9ddb-11ea-9d9c-6777142a4ace',panelIndex:'098775d1-2991-4884-8d1b-840911844f20',type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:9,i:'3cccc673-e88e-4a4b-8e8b-854e80187cf5',w:12,x:24,y:0),id:'943165e0-9ddd-11ea-9d9c-6777142a4ace',panelIndex:'3cccc673-e88e-4a4b-8e8b-854e80187cf5',type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:9,i:af7da873-e735-41d0-aa5b-38aa2032cbc8,w:12,x:36,y:0),id:cd57fb90-9ddd-11ea-9d9c-6777142a4ace,panelIndex:af7da873-e735-41d0-aa5b-38aa2032cbc8,type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:9,i:c06fa692-b247-46d8-aa4a-e2195335aa69,w:16,x:0,y:9),id:'3ed8d640-9dde-11ea-9d9c-6777142a4ace',panelIndex:c06fa692-b247-46d8-aa4a-e2195335aa69,type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:9,i:'26e0c20f-3133-475d-8d3e-f5d6def02f18',w:32,x:16,y:9),id:faaddbe0-9dde-11ea-9d9c-6777142a4ace,panelIndex:'26e0c20f-3133-475d-8d3e-f5d6def02f18',type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:8,i:'300f98f4-d599-4d6a-9216-5aa441e63af2',w:16,x:0,y:18),id:'1ad0d430-9de0-11ea-9d9c-6777142a4ace',panelIndex:'300f98f4-d599-4d6a-9216-5aa441e63af2',type:visualization,version:'7.7.0'),(embeddableConfig:(),gridData:(h:8,i:'80e63890-8fa0-4873-85d4-d7d7b136a9e1',w:23,x:16,y:18),id:c0785c50-9de0-11ea-9d9c-6777142a4ace,panelIndex:'80e63890-8fa0-4873-85d4-d7d7b136a9e1',type:visualization,version:'7.7.0')),query:(language:kuery,query:''),timeRestore:!f,title:Dashboard2_%EC%9C%84%ED%97%98%ED%83%90%EC%A7%80%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C,viewMode:view)&_g=(filters:!(),refreshInterval:(pause:!f,value:3000),time:(from:now-5y,to:now))" height="1500" width="100%" fullScreenMode=!f></iframe>
 
-                <script src="{% static 'js/classie.js' %}"> </script>
-                <script src="{% static 'js/gnmenu.js' %}"> </script>
+		</div>
 
-                <script>
-                    $(window).resize(function () {
-                      var top = $(".gn-menu-main").height();
-                      $('.top-space').css("height",top+"px");
-                      $('.gn-menu-wrapper').css("top",top+1+"px");
-                    }).resize()
-                </script>
-        </body>
+      <script src="{% static 'js/bootstrap.min.js' %}"> </script>
+      <script src="{% static 'js/jquery.min.js' %}"> </script>
+      <script src="{% static 'js/main.js' %}"> </script>
+      <script src="{% static 'js/popper.js' %}"> </script>
+
+  </body>
 </html>
 {% else %}
+
+
 
 {% load static %}
 <!DOCTYPE html>
@@ -92,7 +73,18 @@
                 <div class="login">
                         <h1>Login</h1>
                         <form class="form-signin" method="POST" action="/">{% csrf_token %}
-                                <label for="username">                                                                                                                                                                               <i class="fas fa-user"></i>                                                                                                                                                          </label>                                                                                                                                                                                     <input type="text" id="userid" name="userid" class="form-control" placeholder="ID" autofocus=""/>                                                                                            <label for="password">                                                                                                                                                                               <i class="fas fa-lock"></i>                                                                                                                                                          </label>                                                                                                                                                                                     <input type="password" id="userpw" name="userpw" class="form-control" placeholder="Password"/>                                                                                               <input type="submit" value="Submit" class="btn btn-lg btn-primary btn-block">                                                                                                        </form>                                                                                                                                                                              </div>                                                                                                                                                                               </body>
-</html>
+                                <label for="username">
+                                        <i class="fas fa-user"></i>
+                                </label>
+                                <input type="text" id="userid" name="userid" class="form-control" placeholder="ID" autofocus=""/>
+                                <label for="password">
+                                        <i class="fas fa-lock"></i>
+                                </label>
+                                <input type="password" id="userpw" name="userpw" class="form-control" placeholder="Password"/>
+                                <input type="submit" value="Submit" class="btn btn-lg btn-primary btn-block">
+                        </form>
+                </div>
+        </body>
+</html>       
 
 {% endif %}
