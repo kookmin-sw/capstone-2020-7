@@ -9,4 +9,5 @@ urlpatterns = [
     path('dashboardtwo/',views.kibana_page2),
     path('Login/',views.Login),
     path('Logout/',views.Logout),
+    path('Custom/',views.Custom),
 ]

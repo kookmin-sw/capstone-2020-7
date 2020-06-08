@@ -1,0 +1,85 @@
+{% if user.is_authenticated %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+        <title>Semo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+          <link rel="stylesheet" href="{% static 'css/style1.css' %}" />
+
+  </head>
+  <body>
+
+                <div class="wrapper d-flex align-items-stretch">
+                        <nav id="sidebar" class="active">
+
+                                <div class="logo-bar">
+                                        <img class="logo" src="{% static "img/logo.png" %}">
+                                </div>
+
+                                <ul class="list-unstyled components mb-5">
+                                  <li class="active">
+                                        <a href="#"><span class="fa fa-home"></span> Home</a>
+                                  </li>
+                                  <li>
+                                          <a href="http://203.246.112.139:38080/dashboard"><span class="fa fa-bar-chart"></span> 종합분석<br>대시보드</a>
+                                  </li>
+                                  <li>
+                                        <a href="http://203.246.112.139:38080/dashboardtwo"><span class="fa fa-exclamation-triangle"></span> 위험탐지<br>대시보드</a>
+                                  </li>
+                                        <li>
+                                        <a href="#"><span class="fa fa-search"></span> Inspect</a>
+                                  </li>
+                                        <li>
+                                        <a href="#" ><span class="fa fa-wrench" ></span> Customize</a>
+                                  </li>
+                                  <li>
+                                        <a href="https://github.com/kookmin-sw/capstone-2020-7"><span class="fa fa-github"></span> Github</a>
+                                  </li>
+                                  <li>
+                                        <a href="http://203.246.112.139:38080/Logout"><span class="fa fa-sign-out"></span> Logout</a>
+                                  </li>
+                                </ul>
+                                                    </nav>
+                        <iframe src="http://203.246.112.139:35601/goto/2de5484d22d8413b91e7bd2bb0de1e1e" height="1500" width="100%"></iframe>
+
+                </div>
+
+      <script src="{% static 'js/bootstrap.min.js' %}"> </script>
+      <script src="{% static 'js/jquery.min.js' %}"> </script>
+      <script src="{% static 'js/main.js' %}"> </script>
+      <script src="{% static 'js/popper.js' %}"> </script>
+
+  </body>
+</html>
+
+
+{%else%}
+{% load static %}
+<!DOCTYPE html>
+<html>                                                                                                                                          <head>
+                <meta charset="utf-8">
+                <title>Login</title>
+                <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}" >
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"><!--아이콘두개-->
+        </head>                                                                                                                                 <body>                                                                                                                                           <div class="logo-bar">                                                                                                                         <img class="logo" src="{% static "img/main_logo.png" %}" height="150px" align="center" />                                         </div>                                                                                                                                <div class="login">                                                                                                                             <h1>Login</h1>                                                                                                                          <form class="form-signin" method="POST" action="/">{% csrf_token %}                                                                             <label for="username">
+                                        <i class="fas fa-user"></i>
+                                </label>
+                                <input type="text" id="userid" name="userid" class="form-control" placeholder="ID" autofocus=""/>
+                                <label for="password">
+                                        <i class="fas fa-lock"></i>
+                                </label>
+                                <input type="password" id="userpw" name="userpw" class="form-control" placeholder="Password"/>
+                                <input type="submit" value="Submit" class="btn btn-lg btn-primary btn-block">
+                        </form>
+                </div>
+        </body>
+</html>
+{%endif%}
+
+

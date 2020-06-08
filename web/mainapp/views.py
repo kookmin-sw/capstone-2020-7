@@ -39,3 +39,6 @@ def Login(request):
 def Logout(request):
     logout(request)
     return render(request, 'mainapp/Login.html')
+
+def Custom(request):
+    return render(request, 'mainapp/Custom.html')
