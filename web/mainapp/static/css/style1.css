@@ -8237,8 +8237,8 @@ h1, h2, h3, h4, h5,
   -o-transition: all 0.3s;
   transition: all 0.3s; }
   #sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 100px;
+    max-width: 100px;
     text-align: center; }
     #sidebar.active ul.components li {
       font-size: 14px; }
@@ -8249,6 +8249,7 @@ h1, h2, h3, h4, h5,
           margin-bottom : 5px;
           display: block;
           font-size: 20px; }
+
     #sidebar.active .logo {
       padding: 10px 0; }
     #sidebar.active .footer {
@@ -8305,6 +8306,7 @@ h1, h2, h3, h4, h5,
       margin-left: -80px !important; }
       #sidebar.active {
         margin-left: 0 !important; } }
+
 
 a[data-toggle="collapse"] {
   position: relative; }
