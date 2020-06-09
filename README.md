@@ -3,7 +3,7 @@
 https://kookmin-sw.github.io/capstone-2020-7/
 <br>1차 중간발표 영상 링크 : https://youtu.be/UWzhshno8Rw
 <br>2차 중간발표 영상 링크 : https://youtu.be/N3Sxr04tCCU
-
+<br>최종 발표 영상 링크 :  https://youtu.be/UYhwPCIwl68
 
 # 프로젝트 소개
 
