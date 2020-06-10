@@ -1,5 +1,3 @@
-# kibana dashboard document 
-
 ### 키바나 대시보드 만드는 큰순서
 1. Discover -> change index pattern에서 대시보드를 만들 index설정 ->show dates에서 적절한 date범위 조절
 2. Visualization -> create visualization ->시각화하고싶은 방법선택(ex:수직바차트,파이차트) -> data index 를 선택한다> 보이고 싶은 조건에 맞추어 구성
@@ -124,7 +122,6 @@ Lined에서 실시간 음원차트처럼 만들수도 있다. 실시간 input되
 7. Range 범위정해주기.
 
 ![image](https://user-images.githubusercontent.com/50091802/83552486-d3eb6500-a544-11ea-9721-a565f73d8d1f.png)
-
 
 
 
