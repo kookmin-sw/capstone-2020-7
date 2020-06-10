@@ -4,7 +4,7 @@
 
 # 프로젝트 소개
 
-<img align="left" width="180" height="180" src="https://i.imgur.com/QOmMREN.png">
+<img align="left" width="190" height="180" src="https://i.imgur.com/QOmMREN.png">
 
 ### 프로젝트 명 : SEMO(Security Monitoring Platform)
 정보화 시대를 맞아 네트워크 트래픽의 양이 방대해지면서 보안분야에서의 보안 관제의 역할이 더욱 중요해지고 있다. SeMo는 이러한 문제를 해결하고자 보안관제사들이 자동 처리 규칙들을 업데이트하는 데 도움을 주기 위해서 고안된 프로젝트이다. 수집된 로그데이터를 받아서 딥러닝을 통해 정탐과 오탐 여부를 판별한 후 분석하여 사용자에게 분석결과를 시각화 하여 웹을 통해 보여준다.<br><br>
