@@ -14,7 +14,7 @@ As the amount of network traffic increases due to the information society, the r
 
   
 ## 프로젝트 시나리오
-<img src="https://i.imgur.com/9Fo7CpA.png">
+<img  width="100%" height="100%" src="https://i.imgur.com/9Fo7CpA.png">
 
 ## 소개영상
 
@@ -22,7 +22,7 @@ As the amount of network traffic increases due to the information society, the r
 
 ## SEMO 시연 영상
 
-[![시연영상 링크](https://i.imgur.com/TGMNZGS.png)]( https://youtu.be/2teB6htplh4)
+[![시연영상 링크]( https://i.imgur.com/TGMNZGS.png)]( https://youtu.be/2teB6htplh4)
 # 팀 소개
 
 ## 지도 교수님
