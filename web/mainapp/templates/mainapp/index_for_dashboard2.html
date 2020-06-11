@@ -1,65 +1,96 @@
+
+{% if user.is_authenticated %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Semo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="{% static 'css/style1.css' %}" />
+
+  </head>
+  <body>
+
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+
+				<div class="logo-bar">
+					<img class="logo" src="{% static "img/logo.png" %}">
+				</div>
+
+				<ul class="list-unstyled components mb-5">
+				  <li class="active">
+					<a href="#"><span class="fa fa-home"></span> Home</a>
+				  </li>
+				  <li>
+					  <a href="http://203.246.112.139:38080/dashboard"><span class="fa fa-bar-chart"></span> 종합분석<br>대시보드</a>
+				  </li>
+				  <li>
+					<a href="http://203.246.112.139:38080/dashboardtwo"><span class="fa fa-exclamation-triangle"></span> 위험탐지<br>대시보드</a>
+				  </li>
+                    <li>
+					<a href="{% url 'Inspect' %}"><span class="fa fa-search"></span> Inspect</a>
+				  </li>
+                    <li>
+					<a href="#" ><span class="fa fa-wrench"></span> Customize</a>
+				  </li>
+				  <li>
+					<a href="https://github.com/kookmin-sw/capstone-2020-7"><span class="fa fa-github"></span> Github</a>
+				  </li>
+				  <li>
+					<a href="http://203.246.112.139:38080/Logout"><span class="fa fa-sign-out"></span> Logout</a>
+				  </li>
+				</ul>
+
+			</nav>
+		<iframe src="http://203.246.112.139:35601/goto/984bbed56641e9a67f351f2c2062a12e" height="1500" width="100%" fullScreenMode=!f></iframe>
+
+		</div>
+
+      <script src="{% static 'js/bootstrap.min.js' %}"> </script>
+      <script src="{% static 'js/jquery.min.js' %}"> </script>
+      <script src="{% static 'js/main.js' %}"> </script>
+      <script src="{% static 'js/popper.js' %}"> </script>
+
+  </body>
+</html>
+{% else %}
+
+
+
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
         <head>
-                <meta charset="UTF-8" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>SEMO</title>
-                <meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
-                <meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
-                <meta name="author" content="Codrops" />
-                <link rel="shortcut icon" href="../favicon.ico">
-                <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
-                <link rel="stylesheet" href="{% static 'css/demo.css' %}">
-                <link rel="stylesheet" href="{% static 'css/component.css' %}">
-                <script src="{% static 'js/modernizr.custom.js' %}"> </script>
-
-
+                <meta charset="utf-8">
+                <title>Login</title>
+                <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}" >
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"><!--아이콘두개-->
         </head>
         <body>
-                <div class="container">
-                        <ul id="gn-menu" class="gn-menu-main">
-
-                                <div class="logo-bar">
-                                        <img class="logo" src="{% static "img/main_logo.png" %}">
-                                </div>
-
-                                <li class="gn-trigger">
-                                        <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
-                                        <nav class="gn-menu-wrapper">
-                                                <div class="gn-scroller">
-                                                        <ul class="gn-menu">
-                                                                <li class="gn-search-item">
-                                                                        <input placeholder="Search" type="search" class="gn-search">
-                                                                        <a class="gn-icon gn-icon-search"><span>search</span></a>
-                                                                </li>
-                                                                <li>
-                                                                        <a class="gn-icon gn-icon-download"onclick="location.href='http://203.246.112.139:38080/'"
- >종합분석대시보드</a>
-                                                                </li>
-                                                                <li><a class="gn-icon gn-icon-cog" onclick="location.href='http://203.246.112.139:38080/dashboardtwo'"
->위험탐지대시보드</a></li>
-                                                                <li><a class="gn-icon gn-icon-help">Github</a></li>
-                                                                <li>
-                                                                        <a class="gn-icon gn-icon-archive">Contact</a>
-                                                                </li>
-                                                        </ul>
-                                                </div><!-- /gn-scroller -->
-                                        </nav>
-                                                            </li>
-                                <li><a href="http://tympanus.net/codrops">MENU1</a></li>
-                                <li><a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/HeaderEffects/"><span>MENU2</span></a></li>
-                                <li><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16030"><span>ARTICLES</span></a></li>
-                        </ul>
-
-                                <!--맨위에껀 전체화면 -->
-                                <!--<body style="margin:0px;padding:0px;overflow:hidden"> <iframe src="http://203.246.112.139:35601/goto/3dae9018c3756da779ea3976bf6e2f7a?embed=true" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe> </body> -->
-                            <!-- <h1>Google Nexus Website Menu <span>A sidebar menu as seen on the <a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> page</span></h1> -->
-
-<iframe class="Add-space" src="http://203.246.112.139:35601/goto/b328afcae9eb33d6eb1159ba84855d24" height="1500" width="100%" fullScreenMode=!f></iframe>
-                </div><!-- /container -->
-                <script src="{% static 'js/classie.js' %}"> </script>
-                <script src="{% static 'js/gnmenu.js' %}"> </script>
-
+                 <div class="logo-bar">
+                        <img class="logo" src="{% static "img/main_logo.png" %}" height="150px" align="center" />
+                  </div>
+                <div class="login">
+                        <h1>Login</h1>
+                        <form class="form-signin" method="POST" action="/">{% csrf_token %}
+                                <label for="username">
+                                        <i class="fas fa-user"></i>
+                                </label>
+                                <input type="text" id="userid" name="userid" class="form-control" placeholder="ID" autofocus=""/>
+                                <label for="password">
+                                        <i class="fas fa-lock"></i>
+                                </label>
+                                <input type="password" id="userpw" name="userpw" class="form-control" placeholder="Password"/>
+                                <input type="submit" value="Submit" class="btn btn-lg btn-primary btn-block">
+                        </form>
+                </div>
         </body>
+</html>       
+
+{% endif %}
